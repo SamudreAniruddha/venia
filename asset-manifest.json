@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ef71ce3e.css",
-    "main.js": "/static/js/main.c33d3538.js",
+    "main.js": "/static/js/main.5a92ddda.js",
     "static/media/not-found.jpg": "/static/media/not-found.3e19a8efe142204e1c2d.jpg",
     "static/media/all.jpg": "/static/media/all.9cd37e91bdac32389f37.jpg",
     "static/media/electronics.jpg": "/static/media/electronics.9cd37e91bdac32389f37.jpg",
@@ -31,10 +31,10 @@
     "static/media/chevron-left.svg": "/static/media/chevron-left.4ac6ee7882c74803488aa3c28a368590.svg",
     "static/media/square.svg": "/static/media/square.3213adedecf395f25229fc6a12f8089e.svg",
     "main.ef71ce3e.css.map": "/static/css/main.ef71ce3e.css.map",
-    "main.c33d3538.js.map": "/static/js/main.c33d3538.js.map"
+    "main.5a92ddda.js.map": "/static/js/main.5a92ddda.js.map"
   },
   "entrypoints": [
     "static/css/main.ef71ce3e.css",
-    "static/js/main.c33d3538.js"
+    "static/js/main.5a92ddda.js"
   ]
 }
