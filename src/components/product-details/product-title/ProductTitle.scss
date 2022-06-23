@@ -1,0 +1,170 @@
+//comman mixins 
+.title-hr-line {
+    width: 100%;
+    border: 2px solid #D1D3D6;
+    opacity: 1;
+}
+
+//mobile mixins
+
+@mixin mobTitleSection {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+@mixin mobTitle {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-30) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobTitleDescription {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    word-break: break-all;
+    opacity: 1;
+}
+
+@mixin mobTitlePrice {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-30) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobTitleRatingCount {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: right;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+//desktop mixins
+
+@mixin deskTitleSection {
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 0.5em;
+}
+
+@mixin deskTitle {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin deskTitlePrice {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin deskTitleRating {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+@mixin deskTitleDesc {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    word-break: break-all;
+    opacity: 1;
+}
+
+@mixin deskTitleRat {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    text-decoration: underline;
+}
+
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .title-section {
+
+        @include mobTitleSection;
+
+        .title-title {
+
+            @include mobTitle;
+
+        }
+
+        .title-price {
+
+            @include mobTitlePrice;
+
+        }
+
+        .star-section {
+
+            margin-right: 1%;
+
+        }
+
+        .title-rating-count {
+
+            @include mobTitleRatingCount;
+
+        }
+
+        .title-description {
+
+            @include mobTitleDescription;
+
+        }
+
+
+
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .title-section {
+        @include deskTitleSection;
+    }
+
+    .title-title {
+        @include deskTitle;
+    }
+
+    .title-price {
+        @include deskTitlePrice;
+    }
+
+    .title-rating-rate {
+        @include deskTitleRating;
+    }
+
+    .title-description {
+        @include deskTitleDesc;
+
+        .title-rating-count {
+            @include deskTitleRat;
+        }
+    }
+}

@@ -1,0 +1,375 @@
+//comman mixins
+
+//mobile mixins
+@mixin mobMainFilter {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    background: white;
+}
+
+@mixin mobFilterTitleSection {
+    width: 100%;
+    height: 44px;
+    background: #F4F5F5 0% 0% no-repeat padding-box;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding: 0.5em 3em;
+}
+
+@mixin mobFilterTitleLabel {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    text-align: left;
+    letter-spacing: 0.32px;
+    color: #1D1D1B;
+    opacity: 1;
+}
+
+@mixin mobFilterClose {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align: right;
+    padding-top: 0.4em;
+}
+
+@mixin mobFilterTagSection {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 0.5em 3em;
+}
+
+@mixin mobFilterTagDynamic {
+    background: #545D63 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    opacity: 1;
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--white);
+}
+
+@mixin mobFilterTagClearAll {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: right;
+    text-decoration: underline;
+    opacity: 1;
+    padding-top: 0.5em;
+}
+
+@mixin mobShowMore {
+    padding: 0.5em 3em;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: left;
+    text-decoration: underline;
+    opacity: 1;
+    cursor: pointer;
+}
+
+@mixin mobFilterTitle {
+    padding: 0.5em 3em;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobColorSection {
+    width: 100%;
+    height: auto;
+    padding: 0.5em 3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@mixin mobColorTiles {
+    width: 64px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+@mixin mobLableCheckbox {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/22px var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobCheckBox {
+    // background: var(--white) 0% 0% no-repeat padding-box;
+    // border: 2px solid var(--gray-m1);
+    opacity: 1;
+    margin-right: 1em;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+//desktop mixins
+
+@mixin deskShowMoreSection {
+    padding: 0.5em 0;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: left;
+    text-decoration: underline;
+    opacity: 1;
+    cursor: pointer;
+}
+
+@mixin deskfilterTitleLable {
+    margin: 0 0 5%;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-20)/14px var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin deskFilterTagSection {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+@mixin deskFilterTagDynamic {
+    background: #545D63 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    opacity: 1;
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--white);
+}
+
+@mixin deskFilterTagClearAll {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: right;
+    text-decoration: underline;
+    opacity: 1;
+    padding-top: 0.5em;
+}
+
+@mixin deskfilterTitle {
+    margin: 10px 0;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gray-d2);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin deskColorSection {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@mixin deskColorTiles {
+    width: 64px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+    .main-filter {
+        @include mobMainFilter;
+        animation: leftRight 1s 1;
+        animation-direction: reverse;
+
+        @keyframes leftRight {
+            0% {
+                left: 0px;
+                top: 0px;
+            }
+
+            100% {
+                left: 100%;
+                top: 0px;
+            }
+        }
+    }
+
+    .filter-title-section {
+        @include mobFilterTitleSection;
+
+        .filter-title-label {
+            @include mobFilterTitleLabel;
+        }
+
+        .filter-close {
+            @include mobFilterClose;
+        }
+    }
+
+    .hr-divider {
+        border: 2px solid #D1D3D6;
+        margin: 0.5em 3em;
+    }
+
+    .filter-tag-section {
+        @include mobFilterTagSection;
+
+        .filter-tag-dynamic {
+            @include mobFilterTagDynamic;
+
+            .filter-tag-delete,
+            .filter-tag-select {
+                padding: 5px;
+                white-space: normal;
+            }
+        }
+
+        .filter-tag-clear-all {
+            @include mobFilterTagClearAll;
+
+        }
+    }
+
+    .filter-title {
+        @include mobFilterTitle;
+    }
+
+    .color-section {
+        @include mobColorSection;
+
+        .color-tiles {
+            @include mobColorTiles;
+
+        }
+
+    }
+
+    .size-section,
+    .style-section,
+    .brand-section {
+
+        padding: 0.5em 3em;
+        display: grid;
+
+        label {
+            @include mobLableCheckbox;
+
+            .check-box {
+                @include mobCheckBox;
+
+            }
+        }
+    }
+
+    .show-more-section {
+        @include mobShowMore;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .main-filter {
+        padding-right: 10%;
+    }
+
+    .filter-title-label {
+        @include deskfilterTitleLable;
+    }
+
+    .filter-close {
+        display: none;
+    }
+
+    .hr-divider {
+        margin: 10px 0;
+        border: 2px solid #D1D3D6;
+        opacity: 1;
+    }
+
+    .filter-tag-section {
+        @include deskFilterTagSection;
+
+        .filter-tag-dynamic {
+            @include deskFilterTagDynamic;
+
+            .filter-tag-delete,
+            .filter-tag-select {
+                padding: 5px;
+                white-space: normal;
+            }
+        }
+
+        .filter-tag-clear-all {
+            @include deskFilterTagClearAll;
+
+        }
+    }
+
+    .filter-title {
+        @include deskfilterTitle;
+    }
+
+    .color-section {
+        @include deskColorSection;
+    }
+
+    .color-tiles {
+        @include deskColorTiles;
+    }
+
+    .size-section,
+    .style-section,
+    .brand-section {
+        display: grid;
+
+        label {
+            @include mobLableCheckbox;
+
+            .check-box {
+                @include mobCheckBox;
+            }
+        }
+    }
+
+    .show-more-section {
+        @include deskShowMoreSection;
+    }
+
+    #hr-last-tag{
+        display: none;
+    }
+}

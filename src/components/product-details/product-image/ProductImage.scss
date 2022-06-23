@@ -1,0 +1,77 @@
+@mixin mobSinProImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
+@mixin deskSingProImg {
+    width: 100%;
+    height: 445px;
+    margin: auto;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
+@mixin deskProImgMain {
+    display: grid;
+    grid-template-columns: 15% 80%;
+    grid-template-rows: auto;
+    gap: 1em;
+    height: 100%;
+}
+
+@mixin deskMultiProImg {
+    width: 100%;
+    height: 95px;
+    object-fit: contain;
+    object-position: 50% 50%;
+    padding: 15px;
+    border: 1px  black;
+}
+
+@mixin deskProImgSig {
+    border: 1px  black;
+    padding: 10%;
+    display: grid;
+}
+
+
+@media all and (min-width:320px) and (max-width : 768px) {
+    .pro-img-main {
+        display: none;
+    }
+
+    .mob-single-product-image {
+        @include mobSinProImg;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+
+    .mob-single-product-image {
+        display: none;
+    }
+
+    .desk-single-product-image {
+        @include deskSingProImg;
+    }
+
+    .pro-img-main {
+        @include deskProImgMain;
+    }
+
+    .pro-img-multiple {
+        display: grid;
+        gap: 1em;
+
+        .multi-product-image {
+            @include deskMultiProImg;
+        }
+    }
+
+    .pro-img-single {
+        @include deskProImgSig;
+    }
+}

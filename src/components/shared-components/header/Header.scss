@@ -1,0 +1,207 @@
+header {
+    width: 100%;
+    background: #FFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-hr-line {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--gray-l1);
+}
+
+// comman mixins
+
+@mixin display($param) {
+    display: $param;
+}
+
+// mobile view mixins
+
+@mixin mobMainMenu {
+    width: 100%;
+    height: auto;
+    background: #F4F5F5 0% 0% no-repeat padding-box;
+    position: absolute;
+    z-index: 2;
+    animation: rightLeft 1s 1;
+    animation-direction: reverse;
+
+        @keyframes rightLeft {
+            0% {
+                right: 0px;
+            }
+
+            100% {
+                right: 100%;
+                
+            }            
+        }
+}
+
+@mixin mobMenuTitle {
+    width: 100%;
+    height: 35px;
+    padding: 12px 30px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobMenuItems {
+
+    width: 100%;
+    height: auto;
+    padding: 12px 30px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    opacity: 1;
+
+}
+
+@mixin mobCatagoryItems {
+    height: 50px;
+    border: 0;
+    border-bottom: 1px solid var(--gray-l1);
+    padding: 10px 0;
+
+}
+
+@mixin mobIcon {
+    padding: 20px;
+    width: 60px;
+    cursor: pointer;
+}
+
+@mixin mobLogo {
+    width: 130px;
+    margin: auto;
+}
+
+// desktop view mixins
+
+@mixin deskIcon {
+    padding: 0 0 0 20px;
+    width: 44px;
+    cursor: pointer;
+}
+
+@mixin deskText {
+    padding: 5px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: right;
+    color: #1B252C;
+    opacity: 1;
+}
+
+@mixin deskCatagoryMain {
+    display: flex;
+    margin: auto;
+}
+
+@mixin deskCatagoryItems {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: #1B252C;
+    opacity: 1;
+    margin: 16px;
+    cursor: pointer;
+}
+
+
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .icon-user,
+    .text-user,
+    .text-search,
+    .cata-desktop {
+        @include display(none);
+    }
+
+    .cata-mobile {
+        @include display(contents);
+
+        .main-menu {
+            @include mobMainMenu;
+
+
+            .menu-title {
+                @include mobMenuTitle;
+            }
+
+            .menu-items {
+                @include mobMenuItems;
+
+                .catagory-items {
+                    @include mobCatagoryItems;
+
+                }
+
+            }
+        }
+    }
+
+    .icon-menu,
+    .icon-cart,
+    .icon-search {
+        @include mobIcon;
+
+    }
+
+    .logo {
+        @include mobLogo;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+
+    header {
+        padding: 0 10%;
+    }
+
+    .cata-desktop {
+        @include display(contents);
+    }
+
+
+    .icon-menu,
+    .cata-mobile {
+        @include display(none);
+    }
+
+    .icon-search,
+    .icon-cart,
+    .icon-user {
+        @include deskIcon;
+    }
+
+    .text-search,
+    .text-user {
+        @include deskText;
+    }
+
+    .logo {
+        width: 10%;
+    }
+
+    .catagory-main {
+
+        @include deskCatagoryMain;
+
+
+        .catagory-items {
+            @include deskCatagoryItems;
+
+        }
+    }
+}

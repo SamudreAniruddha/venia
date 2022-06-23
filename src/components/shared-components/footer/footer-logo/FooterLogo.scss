@@ -1,0 +1,38 @@
+@mixin mobMainFooterLogo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+  
+}
+
+@mixin mobImgFooterLogo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    object-position: 50% 50%;
+    padding: 5% 0;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+    .main-footer-logo {
+        @include mobMainFooterLogo;
+        justify-content: center;
+    }
+
+    .img-footer-logo {
+        @include mobImgFooterLogo;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .main-footer-logo {
+        @include mobMainFooterLogo;
+    }
+
+    .img-footer-logo {
+        @include mobImgFooterLogo;
+    }
+}

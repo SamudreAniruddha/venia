@@ -1,0 +1,89 @@
+@mixin deskMainRecentView {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1em;
+    padding: 0 10%;
+}
+
+@mixin deskTitleRecentView {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-36)/var(--unnamed-line-spacing-60) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    opacity: 1;
+}
+
+@mixin deskSectionRecentView {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1em
+}
+
+@mixin deskContentRecentViewOutter {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+@mixin deskContentRecentViewInnerImage {
+    border: 1px  black;
+    width: 100%;
+    height: 210px;
+    padding: 5%;
+}
+
+@mixin deskImageRecentView {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@mixin deskContentRecentViewInnerTitle {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) 14px/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+    .main-recent-view {
+        display: none;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .main-recent-view {
+        @include deskMainRecentView;
+    }
+
+    .title-recent-view {
+        @include deskTitleRecentView;
+    }
+
+    .section-recent-view {
+        @include deskSectionRecentView
+    }
+
+    .content-recent-view-outter {
+        @include deskContentRecentViewOutter;
+    }
+
+    .content-recent-view-inner-image {
+        @include deskContentRecentViewInnerImage;
+    }
+
+    .image-recent-view {
+        @include deskImageRecentView;
+    }
+
+    .content-recent-view-inner-title {
+        @include deskContentRecentViewInnerTitle;
+    }
+}

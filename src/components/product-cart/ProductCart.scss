@@ -1,0 +1,119 @@
+@mixin mobMainAddCart {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+@mixin mobTitAddCart {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-36)/var(--unnamed-line-spacing-45) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    opacity: 1;
+}
+
+@mixin MobHrAddCart {
+    width: 25%;
+    height: 8px;
+    background: var(--primary-brand) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+@mixin deskMainAddCart {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 69% 30%;
+    grid-template-rows: auto;
+    gap: 0.5em;
+    padding: 0 10%;
+}
+
+@mixin deskTitAddCart {
+    width: 100%;
+    height: auto;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-48)/var(--unnamed-line-spacing-45) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    opacity: 1;
+    padding: 20px 0 0;
+}
+
+@mixin deskHrAddCart {
+    width: 10%;
+    height: 8px;
+    background: var(--primary-brand) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+@mixin deskProAddCart {
+    width: 100%;
+    height: auto;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+@mixin deskPriSumAddCart {
+    width: 100%;
+    height: auto;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+@mixin deskFeaAddCart {
+    width: 100%;
+    height: auto;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+    .main-add-cart {
+        @include mobMainAddCart;
+    }
+
+    .title-add-cart {
+        @include mobTitAddCart;
+    }
+
+    .hr-add-cart {
+        @include MobHrAddCart;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+
+    .main-add-cart {
+        @include deskMainAddCart;
+
+        .title-add-cart {
+            @include deskTitAddCart;
+        }
+
+        .hr-add-cart {
+            @include deskHrAddCart;
+        }
+
+        .product-add-cart {
+            @include deskProAddCart;
+        }
+
+        .pricing-summary-add-cart {
+            @include deskPriSumAddCart;
+        }
+
+        .features-add-cart {
+            @include deskFeaAddCart;
+        }
+    }
+
+}

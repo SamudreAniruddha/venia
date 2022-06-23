@@ -1,0 +1,64 @@
+@mixin mobMainAccount {
+    width: 100%;
+    height: auto;
+    display: grid;
+    
+}
+
+@mixin mobTitleAccount {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobSubTitleAccount {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    color: #545D63;
+    opacity: 1;
+    cursor: pointer;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .main-account {
+        gap: 1em;
+        padding: 3% 10%;
+        @include mobMainAccount;
+    }
+
+    .title-account {
+        @include mobTitleAccount;
+    }
+
+    .sign-in-account,
+    .register-account,
+    .order-status-account,
+    .return-account {
+        @include mobSubTitleAccount;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .main-account {
+        gap: 0.5em;
+        @include mobMainAccount;
+    }
+
+    .title-account {
+        padding: 5% 0;
+        @include mobTitleAccount;
+    }
+
+    .sign-in-account,
+    .register-account,
+    .order-status-account,
+    .return-account {
+        @include mobSubTitleAccount;
+    }
+}

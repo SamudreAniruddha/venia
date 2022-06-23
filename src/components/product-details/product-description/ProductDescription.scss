@@ -1,0 +1,100 @@
+//commman mixins
+
+//mobile view mixins
+@mixin mobMainProDes {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+@mixin mobTitleProDes {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-30) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    opacity: 1;
+}
+
+@mixin mobTextProDes {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    opacity: 1;
+}
+
+@mixin mobDesProDes {
+    word-break: break-all;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+//desktop view mixins
+
+@mixin deskTitProDes {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin deskTextProDesc {
+    margin: 15px 0;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin deskDescProDesc {
+    word-break: break-all;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .main-product-desc {
+        @include mobMainProDes;
+    }
+
+    .title-product-desc {
+        @include mobTitleProDes;
+    }
+
+    .text-product-desc {
+        @include mobTextProDes;
+    }
+
+    .description-product-desc {
+        @include mobDesProDes;
+    }
+
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+
+    .title-product-desc {
+        @include deskTitProDes;
+    }
+
+    .text-product-desc {
+        @include deskTextProDesc;
+    }
+
+    .description-product-desc {
+        @include deskDescProDesc;
+    }
+}

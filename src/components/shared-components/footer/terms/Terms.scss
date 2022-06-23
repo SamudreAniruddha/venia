@@ -1,0 +1,43 @@
+@mixin mobMainTerms {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+@mixin mobUsePolicy {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17-5) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: right;
+    text-decoration: underline;
+    opacity: 1;
+    cursor: pointer;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .main-terms {
+        @include mobMainTerms;
+        justify-content: center;
+    }
+
+    .use-terms,
+    .policy-terms {
+        @include mobUsePolicy;
+    }
+
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .main-terms {
+        @include mobMainTerms;
+        justify-content: right
+    }
+
+    .use-terms,
+    .policy-terms {
+        @include mobUsePolicy;
+    }
+}

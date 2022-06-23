@@ -1,0 +1,118 @@
+.banner-section {
+    width: 100%;
+    height: auto;
+    
+}
+
+//comman mixins
+@mixin sectionEnder {
+    width: 50%;
+    height: 10px;
+    margin: 35px 25%;
+    background: var(--primary-brand) 0% 0% no-repeat padding-box;
+    opacity: 1;
+
+}
+
+//mobile view mixins
+
+@mixin mobFrontImage {
+    height: 200px;
+    margin: -20% 10% 0;
+    padding: 5%;
+    z-index: 1;
+    position: relative;
+    background: #0DA0BC;
+    text-align: center;
+}
+
+@mixin mobFrontImageText {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-36)/42px var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--white);
+    opacity: 1;
+}
+
+//dexktop view mixins
+
+@mixin deskFrontImage {
+    width: 45%;
+    height: 272px;
+    z-index: 1;
+    position: relative;
+    background: #0DA0BC;
+}
+
+@mixin deskFrontImageText {
+    width: 100%;
+    text-align: center;
+    height: 180px;
+    padding: 15%;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-36)/42px var(--unnamed-font-family-source-serif-pro);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--white);
+    opacity: 1;
+}
+
+@mixin deskBannerRearImg {
+    width: 60%;
+    height: 250px;
+    float: right;
+    margin: 1% 0;
+    object-fit: cover;
+    object-position: 20% 40%;
+
+}
+
+
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .banner-rear-img {
+        width: 100%;
+    }
+
+    .rear-image {
+        width: 100%;
+
+        .front-image {
+            @include mobFrontImage;
+
+            .front-image-text {
+                @include mobFrontImageText;
+            }
+
+            .front-image-section-ender {
+                @include sectionEnder;
+            }
+        }
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+    .banner-section {
+        margin: 2% 0;
+    }
+
+    .rear-image {
+        width: 100%;
+
+        .banner-rear-img {
+            @include deskBannerRearImg;
+        }
+
+        .front-image {
+            @include deskFrontImage;
+
+            .front-image-text {
+                @include deskFrontImageText;
+            }
+
+            .front-image-section-ender {
+                @include sectionEnder;
+            }
+        }
+    }
+}

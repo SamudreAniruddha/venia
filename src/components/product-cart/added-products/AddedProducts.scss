@@ -1,0 +1,317 @@
+//comman mixins
+
+//mobile mixins
+
+@mixin mobMainAddedProduct {
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 30% 60% 5%;
+    grid-template-rows: 75% 15%;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+@mixin mobImageAddedProductOutter {
+    border: 1px black;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 10px;
+}
+
+@mixin mobImageAddedProductInner {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
+@mixin mobDetailAddedProductOutter {
+    height: auto;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 0 10px;
+    display: grid;
+}
+
+@mixin mobDetailAddedProductTitle {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 18px/18px var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobSizeColor {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/26px var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobAddedProductPrice {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    opacity: 1;
+}
+
+@mixin mobDeleteAddedProductOutter {
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    .icon-remove {
+        cursor: pointer;
+    }
+}
+
+@mixin mobAddMoreCartOutter {
+    width: 75%;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: auto;
+
+    .remove-product-inner,
+    .add-product-inner {
+        align-self: center;
+        cursor: pointer;
+    }
+
+    .input-product-inner {
+        text-align: center;
+
+        input {
+            width: 80%;
+            height: 26px;
+            background: var(--white) 0% 0% no-repeat padding-box;
+            border: 2px solid var(--gray-l2);
+            border-radius: 8px;
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+            color: var(--unnamed-color-172026);
+            text-align: center;
+            letter-spacing: 0.32px;
+            opacity: 1;
+        }
+    }
+}
+
+//desktop mixins
+@mixin deskMainAddPro {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 2fr 3.5fr 2fr 1.5fr;
+    grid-template-rows: auto;
+    gap: 1em;
+    padding-bottom: 20px;
+}
+
+@mixin deskImgAddProOut {
+    border: 1px  black;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 10px;
+}
+
+@mixin deskImgAddProIn {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
+@mixin deskDetAddProTit {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+    padding-bottom: 10px;
+}
+
+@mixin deskDetAddProSty {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+    padding-bottom: 10px;
+}
+
+@mixin deskAddMoreCartOut {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 12% 65% 12%;
+    grid-template-rows: 40px;
+    gap: 10px;
+    align-self: center;
+}
+
+@mixin deskQtyId {
+    width: 100%;
+    height: 100%;
+    background: var(--white) 0% 0% no-repeat padding-box;
+    border: 2px solid var(--gray-l2);
+    border-radius: 8px;
+    opacity: 1;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    letter-spacing: 0.32px;
+    opacity: 1;
+}
+
+@mixin deskActAddProOut {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    display: grid;
+    gap: 1em;
+    align-self: center;
+}
+
+@mixin deskActBtn {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+}
+
+@mixin deskActText {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 12px/16px var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+    cursor: pointer;
+}
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+
+    .main-addded-product {
+        @include mobMainAddedProduct;
+    }
+
+    .image-addded-product-outter {
+        @include mobImageAddedProductOutter;
+
+        .image-addded-product-inner {
+            @include mobImageAddedProductInner;
+        }
+    }
+
+    .detail-addded-product-outter {
+        @include mobDetailAddedProductOutter;
+
+        .detail-addded-product-title {
+            @include mobDetailAddedProductTitle;
+        }
+
+        .detail-addded-product-size,
+        .detail-addded-product-color {
+            @include mobSizeColor;
+        }
+
+        .detail-addded-product-price {
+            @include mobAddedProductPrice;
+        }
+    }
+
+    .delete-addded-product-outter {
+        @include mobDeleteAddedProductOutter;
+    }
+
+    .add-more-cart-outter {
+        @include mobAddMoreCartOutter;
+    }
+
+    .actions-addded-product-outter {
+        display: none;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+
+    .main-addded-product {
+        @include deskMainAddPro;
+    }
+
+    .image-addded-product-outter {
+        @include deskImgAddProOut;
+
+        .image-addded-product-inner {
+            @include deskImgAddProIn;
+        }
+    }
+
+    .detail-addded-product-outter {
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        .detail-addded-product-title {
+            @include deskDetAddProTit;
+        }
+
+        .detail-addded-product-color,
+        .detail-addded-product-size,
+        .detail-addded-product-price {
+            @include deskDetAddProSty;
+        }
+    }
+
+    .add-more-cart-outter {
+        @include deskAddMoreCartOut;
+
+        .remove-product-inner,
+        .input-product-inner,
+        .add-product-inner {
+            display: grid;
+
+            .svg-remove-product-inner,
+            .svg-add-product-inner,
+            #qty {
+                margin: auto;
+                cursor: pointer;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            #qty {
+                @include deskQtyId;
+            }
+        }
+    }
+
+    .delete-addded-product-outter {
+        display: none;
+    }
+
+    .actions-addded-product-outter {
+        @include deskActAddProOut;
+
+        .edit-action,
+        .remove-action,
+        .save-for-later-action {
+            @include deskActBtn;
+        }
+
+        .edit-action-text,
+        .remove-action-text,
+        .save-action-text {
+            @include deskActText;
+        }
+
+        .icon-edit,
+        .icon-remove,
+        .icon-save {
+            cursor: pointer;
+        }
+    }
+
+}

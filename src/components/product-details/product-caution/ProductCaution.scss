@@ -1,0 +1,130 @@
+//comman mixins
+
+//mobile view mixins
+
+@mixin mobCaution {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+@mixin mobCautionTitle {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    opacity: 1;
+    grid-column: 1/3;
+    grid-row: 1/1;
+}
+
+@mixin mobCautionIcon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+@mixin mobCautionText {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+    padding-left: 10px;
+}
+
+//desktop view mixins
+@mixin deskCauMain {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+@mixin deskCauTitle {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: left;
+    opacity: 1;
+    grid-column: 1/3;
+    grid-row: 1/1;
+}
+
+
+
+
+//mobile and tablet view
+@media all and (min-width:320px) and (max-width : 768px) {
+    .caution-main {
+        @include mobCaution;
+    }
+
+    .caution-title {
+        @include mobCautionTitle;
+    }
+
+    .caution-sweat-wick,
+    .caution-feather,
+    .caution-breathable,
+    .caution-material {
+        display: flex;
+    }
+
+    .caution-sweat-wick-icon,
+    .caution-feather-icon,
+    .caution-breathable-icon,
+    .caution-material-icon {
+        @include mobCautionIcon;
+    }
+
+
+    .caution-sweat-wick-text,
+    .caution-feather-text,
+    .caution-breathable-text,
+    .caution-material-text {
+        @include mobCautionText;
+    }
+}
+
+//Desktop view
+@media all and (min-width:769px) {
+
+    .caution-main {
+        @include deskCauMain;
+    }
+
+    .caution-title {
+        @include deskCauTitle;
+    }
+
+    .caution-feather {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .caution-sweat-wick,
+    .caution-feather,
+    .caution-breathable,
+    .caution-material {
+        display: flex;
+    }
+
+    .caution-sweat-wick-icon,
+    .caution-feather-icon,
+    .caution-breathable-icon,
+    .caution-material-icon {
+        @include mobCautionIcon;
+    }
+
+
+    .caution-sweat-wick-text,
+    .caution-feather-text,
+    .caution-breathable-text,
+    .caution-material-text {
+        @include mobCautionText;
+    }
+
+}
