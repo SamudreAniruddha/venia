@@ -70,7 +70,8 @@ const App = () => {
       </Backdrop>
       <Header />
       <Routes>
-        <Route path="/" element={<Navigate to="/products/All" />} />
+        {/* <Route path="/" element={<Navigate to="/products/All" />} /> */}
+        <Route path="/" element={<Navigate to="venia" />} />
         <Route path="/products/:ele" exact element={<ProductList />} />
         <Route path="/productId/:id" element={<ProductDetails />} />
         <Route path="/cart" exact element={<ProductCart />} />
